@@ -1,0 +1,340 @@
+{
+  "$schema": "https://github.com/qwc-services/qwc-data-service/raw/2024-lts/schemas/qwc-data-service.json",
+  "service": "data",
+  "config": {
+    "geometry_default_allow_null": false
+  },
+  "resources": {
+    "datasets": [
+      {
+        "name": "pg/qgs_projects/network_cyprus.node",
+        "db_url": "postgresql:///?service=qwc_geodb",
+        "schema": "gis_data",
+        "table_name": "node",
+        "primary_key": "fid",
+        "fields": [
+          {
+            "name": "id",
+            "data_type": "character varying",
+            "constraints": {
+              "maxlength": 254,
+              "required": true,
+              "multiline": false
+            },
+            "joinfield": null
+          },
+          {
+            "name": "elevation",
+            "data_type": "double precision",
+            "constraints": {
+              "pattern": "[0-9]+([\\.,][0-9]+)?",
+              "required": false,
+              "multiline": false
+            },
+            "joinfield": null
+          },
+          {
+            "name": "demand",
+            "data_type": "double precision",
+            "constraints": {
+              "pattern": "[0-9]+([\\.,][0-9]+)?",
+              "required": false,
+              "multiline": false
+            },
+            "joinfield": null
+          },
+          {
+            "name": "pattern",
+            "data_type": "character varying",
+            "constraints": {
+              "maxlength": 254,
+              "required": false,
+              "multiline": false
+            },
+            "joinfield": null
+          },
+          {
+            "name": "fid",
+            "data_type": "integer",
+            "constraints": {
+              "min": -2147483648,
+              "max": 2147483647,
+              "required": true,
+              "hidden": true,
+              "readOnly": true
+            },
+            "joinfield": null
+          },
+          {
+            "name": "sensor_type",
+            "data_type": "character varying",
+            "constraints": {
+              "required": false,
+              "multiline": false
+            },
+            "joinfield": null
+          },
+          {
+            "name": "district",
+            "data_type": "character varying",
+            "constraints": {
+              "required": false,
+              "multiline": false
+            },
+            "joinfield": null
+          },
+          {
+            "name": "city",
+            "data_type": "character varying",
+            "constraints": {
+              "required": false,
+              "multiline": false
+            },
+            "joinfield": null
+          }
+        ],
+        "jointables": {},
+        "geometry": {
+          "geometry_column": "geom",
+          "geometry_type": "POINT",
+          "srid": 3857
+        }
+      },
+      {
+        "name": "pg/qgs_projects/network_cyprus.pipe",
+        "db_url": "postgresql:///?service=qwc_geodb",
+        "schema": "gis_data",
+        "table_name": "pipe",
+        "primary_key": "fid",
+        "fields": [
+          {
+            "name": "p_id",
+            "data_type": "character varying",
+            "constraints": {
+              "required": true,
+              "multiline": false
+            },
+            "joinfield": null
+          },
+          {
+            "name": "start_node",
+            "data_type": "character varying",
+            "constraints": {
+              "maxlength": 254,
+              "required": false,
+              "multiline": false
+            },
+            "joinfield": null
+          },
+          {
+            "name": "end_node",
+            "data_type": "character varying",
+            "constraints": {
+              "maxlength": 254,
+              "required": false,
+              "multiline": false
+            },
+            "joinfield": null
+          },
+          {
+            "name": "length",
+            "data_type": "double precision",
+            "constraints": {
+              "pattern": "[0-9]+([\\.,][0-9]+)?",
+              "required": false,
+              "multiline": false
+            },
+            "joinfield": null
+          },
+          {
+            "name": "diameter",
+            "data_type": "double precision",
+            "constraints": {
+              "pattern": "[0-9]+([\\.,][0-9]+)?",
+              "required": false,
+              "multiline": false
+            },
+            "joinfield": null
+          },
+          {
+            "name": "roughnes",
+            "data_type": "double precision",
+            "constraints": {
+              "pattern": "[0-9]+([\\.,][0-9]+)?",
+              "required": false,
+              "multiline": false
+            },
+            "joinfield": null
+          },
+          {
+            "name": "fid",
+            "data_type": "integer",
+            "constraints": {
+              "min": -2147483648,
+              "max": 2147483647,
+              "required": true,
+              "hidden": true,
+              "readOnly": true
+            },
+            "joinfield": null
+          },
+          {
+            "name": "sensor_type",
+            "data_type": "character varying",
+            "constraints": {
+              "required": false,
+              "multiline": false
+            },
+            "joinfield": null
+          },
+          {
+            "name": "probability",
+            "data_type": "double precision",
+            "constraints": {
+              "pattern": "[0-9]+([\\.,][0-9]+)?",
+              "required": true,
+              "hidden": true,
+              "readOnly": true
+            },
+            "joinfield": null
+          }
+        ],
+        "jointables": {},
+        "geometry": {
+          "geometry_column": "geom",
+          "geometry_type": "MULTILINESTRING",
+          "srid": 3857
+        }
+      },
+      {
+        "name": "pg/qgs_projects/network_cyprus.sensor",
+        "db_url": "postgresql:///?service=qwc_geodb",
+        "schema": "gis_data",
+        "table_name": "sensor",
+        "primary_key": "fid",
+        "fields": [
+          {
+            "name": "fid",
+            "data_type": "integer",
+            "constraints": {
+              "min": -2147483648,
+              "max": 2147483647,
+              "required": true,
+              "hidden": true,
+              "readOnly": true
+            },
+            "joinfield": null
+          },
+          {
+            "name": "id",
+            "data_type": "character varying",
+            "constraints": {
+              "required": true,
+              "multiline": false
+            },
+            "joinfield": null
+          },
+          {
+            "name": "type",
+            "data_type": "character varying",
+            "constraints": {
+              "required": true,
+              "values": [
+                {
+                  "label": "amr",
+                  "value": "amr"
+                },
+                {
+                  "label": "flow",
+                  "value": "flow"
+                },
+                {
+                  "label": "pressure",
+                  "value": "pressure"
+                }
+              ]
+            },
+            "joinfield": null
+          },
+          {
+            "name": "pipe_id",
+            "data_type": "character varying",
+            "constraints": {
+              "required": false,
+              "multiline": false
+            },
+            "joinfield": null
+          },
+          {
+            "name": "node_id",
+            "data_type": "character varying",
+            "constraints": {
+              "required": false,
+              "multiline": false
+            },
+            "joinfield": null
+          },
+          {
+            "name": "logger_id",
+            "data_type": "character varying",
+            "constraints": {
+              "required": false,
+              "multiline": false
+            },
+            "joinfield": null
+          },
+          {
+            "name": "function",
+            "data_type": "character varying",
+            "constraints": {
+              "required": false,
+              "multiline": false
+            },
+            "joinfield": null
+          },
+          {
+            "name": "district",
+            "data_type": "character varying",
+            "constraints": {
+              "required": false,
+              "multiline": false
+            },
+            "joinfield": null
+          },
+          {
+            "name": "city",
+            "data_type": "character varying",
+            "constraints": {
+              "required": false,
+              "multiline": false
+            },
+            "joinfield": null
+          },
+          {
+            "name": "install_date",
+            "data_type": "date",
+            "constraints": {
+              "required": true
+            },
+            "joinfield": null
+          },
+          {
+            "name": "looker_url",
+            "data_type": "character varying",
+            "constraints": {
+              "required": false,
+              "multiline": false
+            },
+            "joinfield": null
+          }
+        ],
+        "jointables": {},
+        "geometry": {
+          "geometry_column": "geom",
+          "geometry_type": "POINT",
+          "srid": 3857
+        }
+      }
+    ]
+  }
+}

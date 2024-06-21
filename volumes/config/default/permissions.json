@@ -1,0 +1,210 @@
+{
+  "$schema": "https://github.com/qwc-services/qwc-services-core/raw/2024-lts/schemas/qwc-services-permissions.json",
+  "users": [
+    {
+      "name": "admin",
+      "groups": [],
+      "roles": [
+        "admin"
+      ]
+    }
+  ],
+  "groups": [],
+  "roles": [
+    {
+      "role": "public",
+      "permissions": {
+        "wms_services": [
+          {
+            "name": "pg/qgs_projects/network_cyprus",
+            "layers": [
+              {
+                "name": "network_cyprus"
+              },
+              {
+                "name": "sensor",
+                "attributes": [
+                  "fid",
+                  "id",
+                  "type",
+                  "pipe_id",
+                  "node_id",
+                  "logger_id",
+                  "function",
+                  "district",
+                  "city",
+                  "install_date",
+                  "looker_url",
+                  "geometry",
+                  "maptip"
+                ],
+                "queryable": true,
+                "info_template": true
+              },
+              {
+                "name": "node",
+                "attributes": [
+                  "id",
+                  "elevation",
+                  "demand",
+                  "pattern",
+                  "fid",
+                  "sensor_type",
+                  "district",
+                  "city",
+                  "geometry",
+                  "maptip"
+                ],
+                "queryable": true,
+                "info_template": true
+              },
+              {
+                "name": "pipe",
+                "attributes": [
+                  "p_id",
+                  "start_node",
+                  "end_node",
+                  "length",
+                  "diameter",
+                  "roughnes",
+                  "fid",
+                  "sensor_type",
+                  "probability",
+                  "geometry",
+                  "maptip"
+                ],
+                "queryable": true,
+                "info_template": true
+              },
+              {
+                "name": "osm_bg"
+              }
+            ]
+          }
+        ],
+        "wfs_services": [],
+        "background_layers": [
+          "mapnik"
+        ],
+        "data_datasets": [
+          {
+            "name": "pg/qgs_projects/network_cyprus.node",
+            "attributes": [
+              "id",
+              "elevation",
+              "demand",
+              "pattern",
+              "fid",
+              "sensor_type",
+              "district",
+              "city"
+            ],
+            "writable": false,
+            "creatable": false,
+            "readable": true,
+            "updatable": false,
+            "deletable": false
+          },
+          {
+            "name": "pg/qgs_projects/network_cyprus.pipe",
+            "attributes": [
+              "p_id",
+              "start_node",
+              "end_node",
+              "length",
+              "diameter",
+              "roughnes",
+              "fid",
+              "sensor_type",
+              "probability"
+            ],
+            "writable": false,
+            "creatable": false,
+            "readable": true,
+            "updatable": false,
+            "deletable": false
+          },
+          {
+            "name": "pg/qgs_projects/network_cyprus.sensor",
+            "attributes": [
+              "fid",
+              "id",
+              "type",
+              "pipe_id",
+              "node_id",
+              "logger_id",
+              "function",
+              "district",
+              "city",
+              "install_date",
+              "looker_url"
+            ],
+            "writable": false,
+            "creatable": false,
+            "readable": true,
+            "updatable": false,
+            "deletable": false
+          }
+        ],
+        "viewer_tasks": [],
+        "theme_info_links": [],
+        "plugin_data": [],
+        "dataproducts": [
+          "qwc_demo"
+        ],
+        "document_templates": [],
+        "print_templates": [],
+        "solr_facets": [
+          "foreground",
+          "ne_10m_admin_0_countries"
+        ],
+        "external_links": []
+      }
+    },
+    {
+      "role": "admin",
+      "permissions": {
+        "wms_services": [],
+        "wfs_services": [],
+        "background_layers": [],
+        "data_datasets": [
+          {
+            "name": "pg/qgs_projects/network_cyprus.node",
+            "attributes": [],
+            "writable": true,
+            "creatable": true,
+            "readable": true,
+            "updatable": true,
+            "deletable": true
+          },
+          {
+            "name": "pg/qgs_projects/network_cyprus.pipe",
+            "attributes": [],
+            "writable": true,
+            "creatable": true,
+            "readable": true,
+            "updatable": true,
+            "deletable": true
+          },
+          {
+            "name": "pg/qgs_projects/network_cyprus.sensor",
+            "attributes": [],
+            "writable": true,
+            "creatable": true,
+            "readable": true,
+            "updatable": true,
+            "deletable": true
+          }
+        ],
+        "viewer_tasks": [],
+        "theme_info_links": [],
+        "plugin_data": [],
+        "dataproducts": [],
+        "document_templates": [],
+        "print_templates": [],
+        "solr_facets": [],
+        "external_links": []
+      }
+    }
+  ]
+}

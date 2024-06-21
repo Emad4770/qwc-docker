@@ -1,0 +1,144 @@
+{
+  "$schema": "https://github.com/qwc-services/qwc-feature-info-service/raw/2024-lts/schemas/qwc-feature-info-service.json",
+  "service": "feature-info",
+  "config": {
+    "default_qgis_server_url": "http://qwc-qgis-server/ows/",
+    "skip_empty_attributes": false
+  },
+  "resources": {
+    "wms_services": [
+      {
+        "name": "pg/qgs_projects/network_cyprus",
+        "root_layer": {
+          "name": "network_cyprus",
+          "title": "Water Distribution Network",
+          "layers": [
+            {
+              "name": "sensor",
+              "title": "sensor",
+              "attributes": [
+                {
+                  "name": "fid"
+                },
+                {
+                  "name": "id"
+                },
+                {
+                  "name": "type"
+                },
+                {
+                  "name": "pipe_id"
+                },
+                {
+                  "name": "node_id"
+                },
+                {
+                  "name": "logger_id"
+                },
+                {
+                  "name": "function"
+                },
+                {
+                  "name": "district"
+                },
+                {
+                  "name": "city"
+                },
+                {
+                  "name": "install_date"
+                },
+                {
+                  "name": "looker_url"
+                },
+                {
+                  "name": "geometry"
+                },
+                {
+                  "name": "maptip"
+                }
+              ],
+              "display_field": "id"
+            },
+            {
+              "name": "node",
+              "title": "node",
+              "attributes": [
+                {
+                  "name": "id"
+                },
+                {
+                  "name": "elevation"
+                },
+                {
+                  "name": "demand"
+                },
+                {
+                  "name": "pattern"
+                },
+                {
+                  "name": "fid"
+                },
+                {
+                  "name": "sensor_type"
+                },
+                {
+                  "name": "district"
+                },
+                {
+                  "name": "city"
+                },
+                {
+                  "name": "geometry"
+                },
+                {
+                  "name": "maptip"
+                }
+              ],
+              "display_field": "id"
+            },
+            {
+              "name": "pipe",
+              "title": "pipe",
+              "attributes": [
+                {
+                  "name": "p_id"
+                },
+                {
+                  "name": "start_node"
+                },
+                {
+                  "name": "end_node"
+                },
+                {
+                  "name": "length"
+                },
+                {
+                  "name": "diameter"
+                },
+                {
+                  "name": "roughnes"
+                },
+                {
+                  "name": "fid"
+                },
+                {
+                  "name": "sensor_type"
+                },
+                {
+                  "name": "probability"
+                },
+                {
+                  "name": "geometry"
+                },
+                {
+                  "name": "maptip"
+                }
+              ],
+              "display_field": "id"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

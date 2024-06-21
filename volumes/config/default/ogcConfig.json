@@ -1,0 +1,85 @@
+{
+  "$schema": "https://github.com/qwc-services/qwc-ogc-service/raw/2024-lts/schemas/qwc-ogc-service.json",
+  "service": "ogc",
+  "config": {
+    "default_qgis_server_url": "http://qwc-qgis-server/ows/"
+  },
+  "resources": {
+    "wms_services": [
+      {
+        "name": "pg/qgs_projects/network_cyprus",
+        "online_resources": {
+          "service": "/ows/pg/qgs_projects/network_cyprus",
+          "feature_info": "/api/v1/featureinfo/pg/qgs_projects/network_cyprus",
+          "legend": "/api/v1/legend/pg/qgs_projects/network_cyprus"
+        },
+        "root_layer": {
+          "name": "network_cyprus",
+          "title": "Water Distribution Network",
+          "layers": [
+            {
+              "name": "sensor",
+              "title": "sensor",
+              "attributes": [
+                "fid",
+                "id",
+                "type",
+                "pipe_id",
+                "node_id",
+                "logger_id",
+                "function",
+                "district",
+                "city",
+                "install_date",
+                "looker_url",
+                "geometry",
+                "maptip"
+              ],
+              "queryable": true
+            },
+            {
+              "name": "node",
+              "title": "node",
+              "attributes": [
+                "id",
+                "elevation",
+                "demand",
+                "pattern",
+                "fid",
+                "sensor_type",
+                "district",
+                "city",
+                "geometry",
+                "maptip"
+              ],
+              "queryable": true
+            },
+            {
+              "name": "pipe",
+              "title": "pipe",
+              "attributes": [
+                "p_id",
+                "start_node",
+                "end_node",
+                "length",
+                "diameter",
+                "roughnes",
+                "fid",
+                "sensor_type",
+                "probability",
+                "geometry",
+                "maptip"
+              ],
+              "queryable": true
+            }
+          ]
+        },
+        "print_templates": [],
+        "internal_print_layers": [
+          "osm_bg"
+        ]
+      }
+    ],
+    "wfs_services": []
+  }
+}

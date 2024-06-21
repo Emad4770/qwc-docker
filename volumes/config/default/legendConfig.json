@@ -1,0 +1,29 @@
+{
+  "$schema": "https://github.com/qwc-services/qwc-legend-service/raw/2024-lts/schemas/qwc-legend-service.json",
+  "service": "legend",
+  "config": {
+    "default_qgis_server_url": "http://qwc-qgis-server/ows/",
+    "legend_images_path": "/legends/"
+  },
+  "resources": {
+    "wms_services": [
+      {
+        "name": "pg/qgs_projects/network_cyprus",
+        "root_layer": {
+          "name": "network_cyprus",
+          "layers": [
+            {
+              "name": "sensor"
+            },
+            {
+              "name": "node"
+            },
+            {
+              "name": "pipe"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
